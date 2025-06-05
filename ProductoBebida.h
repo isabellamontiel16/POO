@@ -10,9 +10,8 @@ private:
     bool alcohol;
 
 public:
-    ProductoBebida(int _id, const string& _nombre, double _precio, int _cantidad, bool _alcohol);
-    string to_string() const override;
+    ProductoBebida(int _id, const std::string& _nombre, double _precio, int _cantidad, bool _alcohol);
+    std::string to_string() const override;
 };
 
 #endif
-
