@@ -7,11 +7,12 @@ class ProductoLimpieza : public Producto {
 private:
     double precio;
     int cantidad;
-    string superficie;
+    std::string superficie;
 
 public:
-    ProductoLimpieza(int _id, const string& _nombre, double _precio, int _cantidad, const string& _superficie);
-    string to_string() const override;
+    ProductoLimpieza(int _id, const std::string& _nombre, double _precio, int _cantidad, const std::string& _superficie);
+    std::string to_string() const override;
 };
 
 #endif
+
