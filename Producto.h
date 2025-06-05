@@ -1,21 +1,23 @@
-// Archivo: Producto.h
 #ifndef PRODUCTO_H
 #define PRODUCTO_H
 
 #include <string>
-using namespace std;
+#include <iostream>
 
 class Producto {
 protected:
     int id;
-    string nombre;
-    string tipo;
+    std::string nombre;
+    std::string tipo;
 
 public:
     Producto();
-    Producto(int _id, const string& _nombre, const string& _tipo);
+    Producto(int _id, const std::string& _nombre, const std::string& _tipo);
     virtual ~Producto() {}
-    virtual string to_string() const = 0;
+
+    virtual std::string to_string() const = 0;
+
+    friend std::ostream& operator<<(std::ostream& os, const Producto& p);
 };
 
 #endif
