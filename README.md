@@ -1,18 +1,27 @@
 # POO
-En este proyecto desarrollé un sistema básico de inventario para un supermercado usando programación orientada a objetos en C++. El objetivo fue aplicar los conceptos clave de POO como herencia, clases abstractas, polimorfismo, sobrecarga de operadores y encapsulamiento.
+En este proyecto desarrollé un sistema básico de inventario para distintos tipos de productos usando programación orientada a objetos en C++. El objetivo principal fue aplicar conceptos de POO como herencia, clases abstractas, polimorfismo, encapsulamiento y sobrecarga de operadores.
 
-Creé una clase base llamada Producto, que es abstracta porque tiene una función virtual pura llamada to_string(). Esa función es implementada de forma personalizada en las clases hijas para mostrar la información de cada producto. También sobrecargué el operador << para poder imprimir fácilmente los objetos con cout.
+Descripción
+La clase base es Producto, que es abstracta al contener una función virtual pura to_string(). Esta función se implementa en las clases derivadas para mostrar la información específica de cada tipo de producto.
 
-A partir de Producto, hice cuatro clases diferentes:
+Se crearon cuatro clases derivadas que representan diferentes tipos de productos:
 
-ProductoPerecedero, que incluye precio, cantidad y fecha de caducidad.
+ProductoPerecedero: incluye precio, cantidad y fecha de caducidad.
 
-ProductoNoPerecedero, que también tiene precio y cantidad, además de la marca.
+ProductoNoPerecedero: incluye precio, cantidad y marca.
 
-ProductoBebida, donde se agrega un atributo para saber si tiene alcohol o no.
+ProductoBebida: incluye precio, cantidad y un atributo para indicar si contiene alcohol.
 
-ProductoLimpieza, que indica la superficie para la que está hecho el producto.
+ProductoLimpieza: incluye precio, cantidad y la superficie para la cual está diseñado el producto.
 
-Todos estos productos se crean dinámicamente en el main, y se guardan en un vector de punteros a Producto. Así pude usar polimorfismo al imprimirlos, ya que todos tienen su propia versión de to_string().
+Además, para manejar precio y cantidad de forma agrupada, se creó la clase Inventario, que es usada como miembro en las clases derivadas.
 
-El código está organizado en archivos .h y .cpp por cada clase, lo cual ayuda a mantener todo más claro y ordenado. También me aseguré de liberar bien la memoria al final del programa.
+En el archivo main.cpp se crean dinámicamente instancias de cada tipo de producto y se almacenan en un arreglo de punteros a Producto. Esto permite aprovechar el polimorfismo para imprimir la información detallada de cada producto usando el operador << sobrecargado.
+
+Finalmente, el programa libera correctamente la memoria asignada para evitar fugas.
+
+Para compilar el proyecto en una terminal de Linux o Windows (con MinGW), ejecuta el siguiente comando:
+## g++ -std=c++11 main.cpp -o inventario
+Luego, para ejecutar el programa:
+## ./inventario    # Linux/macOS
+## inventario.exe  # Windows
