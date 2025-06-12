@@ -2,7 +2,7 @@
 En este proyecto desarrollé un sistema básico de inventario para distintos tipos de productos usando programación orientada a objetos en C++. El objetivo principal fue aplicar conceptos de POO como herencia, clases abstractas, polimorfismo, encapsulamiento y sobrecarga de operadores.
 
 # Descripción
-La clase base es Producto, que es abstracta al contener una función virtual pura to_string(). Esta función se implementa en las clases derivadas para mostrar la información específica de cada tipo de producto.
+La clase pasre es Producto, que es abstracta al contener una función virtual pura to_string(). Esta función se implementa en las clases derivadas para mostrar la información específica de cada tipo de producto.
 
 Se crearon cuatro clases derivadas que representan diferentes tipos de productos:
 
