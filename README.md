@@ -1,7 +1,7 @@
-# POO
+## POO
 En este proyecto desarrollé un sistema básico de inventario para distintos tipos de productos usando programación orientada a objetos en C++. El objetivo principal fue aplicar conceptos de POO como herencia, clases abstractas, polimorfismo, encapsulamiento y sobrecarga de operadores.
 
-Descripción
+# Descripción
 La clase base es Producto, que es abstracta al contener una función virtual pura to_string(). Esta función se implementa en las clases derivadas para mostrar la información específica de cada tipo de producto.
 
 Se crearon cuatro clases derivadas que representan diferentes tipos de productos:
@@ -20,11 +20,17 @@ En el archivo main.cpp se crean dinámicamente instancias de cada tipo de produc
 
 Finalmente, el programa libera correctamente la memoria asignada para evitar fugas.
 
-Para compilar el proyecto en una terminal de Linux o Windows (con MinGW), ejecuta el siguiente comando:
+# Casos que podrían causar fallas o que hay que controlar
+Desbordamiento del arreglo: Como se usa un arreglo estático con capacidad fija (20), agregar más productos sin control puede causar errores o corrupción de memoria. Sería ideal verificar antes de insertar o usar un contenedor dinámico.
 
+Gestión de memoria: Es fundamental eliminar todos los objetos creados dinámicamente para evitar fugas, como se hace en el main.
+
+Datos inválidos: No hay validaciones para valores negativos en precio o cantidad, o formatos incorrectos en fechas. Esto puede afectar cálculos o la presentación.
+
+Sobrecarga y polimorfismo: Si se agrega alguna clase sin implementar correctamente to_string(), el programa dejará de funcionar correctamente.
+
+# Compilación
 g++ -std=c++11 main.cpp -o inventario
-
-Luego, para ejecutar el programa:
 
 ./inventario    # Linux/macOS
 
