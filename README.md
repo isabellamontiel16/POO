@@ -21,7 +21,11 @@ En el archivo main.cpp se crean dinámicamente instancias de cada tipo de produc
 Finalmente, el programa libera correctamente la memoria asignada para evitar fugas.
 
 Para compilar el proyecto en una terminal de Linux o Windows (con MinGW), ejecuta el siguiente comando:
+
 g++ -std=c++11 main.cpp -o inventario
+
 Luego, para ejecutar el programa:
+
 ./inventario    # Linux/macOS
+
 inventario.exe  # Windows
