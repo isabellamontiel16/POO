@@ -1,4 +1,4 @@
-## POO
+# POO
 En este proyecto desarrollé un sistema básico de inventario para distintos tipos de productos usando programación orientada a objetos en C++. El objetivo principal fue aplicar conceptos de POO como herencia, clases abstractas, polimorfismo, encapsulamiento y sobrecarga de operadores.
 
 # Descripción
