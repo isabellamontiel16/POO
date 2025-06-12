@@ -11,13 +11,19 @@ protected:
     std::string tipo;
 
 public:
-    Producto();
-    Producto(int _id, const std::string& _nombre, const std::string& _tipo);
+    Producto() : id(0), nombre(""), tipo("") {}
+    Producto(int _id, const std::string& _nombre, const std::string& _tipo)
+        : id(_id), nombre(_nombre), tipo(_tipo) {
+    }
+
     virtual ~Producto() {}
 
     virtual std::string to_string() const = 0;
 
-    friend std::ostream& operator<<(std::ostream& os, const Producto& p);
+    friend std::ostream& operator<<(std::ostream& os, const Producto& p) {
+        os << p.to_string();
+        return os;
+    }
 };
 
-#endif
+#endif 
